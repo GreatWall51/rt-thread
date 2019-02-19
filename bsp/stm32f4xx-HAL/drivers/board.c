@@ -31,11 +31,11 @@ static void SystemClock_Config(void)
 #else
 #define CLOCK_SOURE_VALUE  HSE_VALUE
 #endif    
-
+		RCC_OscInitTypeDef RCC_OscInitStruct;
+    RCC_ClkInitTypeDef RCC_ClkInitStruct;
     source_clk = CLOCK_SOURE_VALUE / 1000000UL;
     sys_clk = HCLK_VALUE / 1000000UL;
-    RCC_OscInitTypeDef RCC_OscInitStruct;
-    RCC_ClkInitTypeDef RCC_ClkInitStruct;
+    
 #if defined(RT_USING_RTC) || defined(RCC_PERIPHCLK_CLK48)
     RCC_PeriphCLKInitTypeDef PeriphClkInitStruct;
 #endif
